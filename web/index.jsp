@@ -13,21 +13,25 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+      rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+      crossorigin="anonymous">
         <title>JSP Page</title>
     </head>
     <body>
-        <div>
-            <h1>Lista de Productos</h1>
-            <table>
+        <div class="container mt-4">
+            <h1 class="text-center mt-4">Lista de Productos</h1>
+            <table class="table table-dark mt-4">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Precio</th>
-                        <th>Cantidad</th>
-                        <th>Ganancias</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Precio</th>
+                        <th class="text-center">Cantidad</th>
+                        <th class="text-center">Ganancias</th>
+                        <th class="text-center">Editar</th>
+                        <th class="text-center">Eliminar</th>
                     </tr>
                 </thead>
                 
@@ -43,21 +47,21 @@
                 %>
                 
                     <tr>
-                        <td><%= product.getId() %></td>
-                        <td><%= product.getName() %></td>
-                        <td><%= product.getPrice()%></td>
-                        <td><%= product.getQuantity()%></td>
-                        <td><%= product.getProfit() %></td>
-                        <td>
+                        <td class="text-center"><%= product.getId() %></td>
+                        <td class="text-center"><%= product.getName() %></td>
+                        <td class="text-center"<%= product.getPrice()%></td>
+                        <td class="text-center"><%= product.getQuantity()%></td>
+                        <td class="text-center"><%= product.getProfit() %></td>
+                        <td class="text-center">
                             <a href="Controlador?accion=updateProduct&id=<%= product.getId() %>">
-                                <button>
+                                <button class="btn btn-primary">
                                     Editar
                                 </button>
                             </a>
                         </td>
-                        <td>
+                        <td class="text-center">
                             <a href="Controlador?accion=deleteProduct&id=<%= product.getId() %>">
-                                <button>
+                                <button class="btn btn-danger">
                                     Eliminar
                                 </button>
                             </a>
@@ -68,7 +72,7 @@
             </table>
             
                     <a href="Controlador?accion=addProducts">
-                        <button>
+                        <button class="btn btn-success">
                             Agregar
                         </button>
                     </a>
