@@ -3,6 +3,7 @@ package Controller;
 
 import Model.Product;
 import ModelDAO.ProductDAO;
+import static io.github.pixee.security.jakarta.PathValidator.validateDispatcherPath;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -107,7 +108,7 @@ public class Controlador extends HttpServlet {
             }
             break;
         }
-        RequestDispatcher view = request.getRequestDispatcher(access);
+        RequestDispatcher view = request.getRequestDispatcher(validateDispatcherPath(access));
         view.forward(request, response);
     }
 
